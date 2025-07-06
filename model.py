@@ -211,7 +211,7 @@ class BertTrainer:
             betas=(0.9, 0.999),
             warmup_steps=10000,
             log_freq=10,
-            device='cpu'
+            device='cuda'
     ):
         self.model = model
         self.train_dataloader = train_dataloader
