@@ -6,6 +6,13 @@ from torch import nn
 from torch.optim import Adam
 import tqdm
 
+n_embd = 64
+max_len = 128
+batch_size = 32
+n_layers = 2
+n_heads = 2
+dropout = 0.1
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 class PositionEmbedding(nn.Module):
 
