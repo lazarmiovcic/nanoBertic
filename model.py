@@ -346,7 +346,7 @@ class BertTrainer:
             # if i % self.log_freq == 0:
             #     data_iter.write(str(post_fix))
 
-            # SAVE CHECKPOINTS EVERY 10000 BATCHES
+            # SAVE CHECKPOINT EVERY 30 steps
             if train and (i + 1) % 30 == 0:
                 checkpoint = {
                     'model_state_dict': self.model.state_dict(),
@@ -355,7 +355,7 @@ class BertTrainer:
                     'epoch': epoch,
                     'step': self.optim_schedule._step
                 }
-                checkpoint_path = '/content/drive/Othercomputers/Мој лаптоп/bert_checkpoint.pt'
+                checkpoint_path = '/content/drive/MyDrive/bert-checkpoint/bert_checkpoint.pt'
                 torch.save(checkpoint, checkpoint_path)
                 print(f"Saved checkpoint at epoch {epoch}, step {i+1}")
 
